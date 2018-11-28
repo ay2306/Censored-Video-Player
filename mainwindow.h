@@ -7,7 +7,9 @@
 #include <QFileDialog>
 #include <QProgressBar>
 #include <QSlider>
-
+#include <QAudio>
+#include <iostream>
+#include <QTextStream>
 namespace Ui {
 class MainWindow;
 }
@@ -15,6 +17,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    int defautVolume;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
@@ -29,6 +32,7 @@ private slots:
 
     void on_actionOpen_triggered();
 
+    void apply_volume(int Volume);
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *player;
